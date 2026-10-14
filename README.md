@@ -2,7 +2,7 @@
 
 Análisis de participación en servicios de Bienestar Universitario que **separa la asistencia real de los cargues administrativos de beneficios**, con un informe HTML que se genera automáticamente desde la base de datos.
 
-**[Ver el informe en vivo](https://TU-USUARIO.github.io/bienestar-participacion-analisis/)**
+**[Ver el informe en vivo](https://Tensai2001.github.io/bienestar-participacion-analisis/)**
 
 > Todos los datos de este repositorio son **sintéticos**. Reproducen la estructura y los problemas de una base real, pero no corresponden a ninguna institución ni a personas reales.
 
