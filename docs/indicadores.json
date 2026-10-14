@@ -1,0 +1,303 @@
+{
+  "periodos": [
+    "2025-1",
+    "2025-2",
+    "2026-1"
+  ],
+  "periodo_inicial": "2025-1",
+  "periodo_final": "2026-1",
+  "kpis": [
+    {
+      "periodo": "2025-1",
+      "total_bruto": 15176,
+      "duplicados": 239,
+      "administrativos": 2200,
+      "organicos": 12737,
+      "usuarios_unicos": 7875,
+      "recurrencia": 1.62
+    },
+    {
+      "periodo": "2025-2",
+      "total_bruto": 17167,
+      "duplicados": 243,
+      "administrativos": 3000,
+      "organicos": 13924,
+      "usuarios_unicos": 8213,
+      "recurrencia": 1.7
+    },
+    {
+      "periodo": "2026-1",
+      "total_bruto": 20587,
+      "duplicados": 308,
+      "administrativos": 5400,
+      "organicos": 14879,
+      "usuarios_unicos": 8516,
+      "recurrencia": 1.75
+    }
+  ],
+  "resumen": {
+    "crecimiento_bruto": 35.7,
+    "crecimiento_organico": 16.8,
+    "crecimiento_usuarios": 8.1,
+    "porcentaje_admin_final": 26.2
+  },
+  "serie_mensual": {
+    "etiquetas": [
+      "feb 25",
+      "mar 25",
+      "abr 25",
+      "may 25",
+      "jun 25",
+      "ago 25",
+      "sep 25",
+      "oct 25",
+      "nov 25",
+      "dic 25",
+      "feb 26",
+      "mar 26",
+      "abr 26",
+      "may 26",
+      "jun 26"
+    ],
+    "organico": [
+      2632,
+      2554,
+      2548,
+      2514,
+      2489,
+      2755,
+      2806,
+      2752,
+      2794,
+      2817,
+      2989,
+      3054,
+      3004,
+      2939,
+      2893
+    ],
+    "administrativo": [
+      0,
+      2200,
+      0,
+      0,
+      0,
+      0,
+      3000,
+      0,
+      0,
+      0,
+      0,
+      5400,
+      0,
+      0,
+      0
+    ]
+  },
+  "areas": [
+    {
+      "area": "Deportes",
+      "valores": [
+        3221,
+        3686,
+        4372
+      ],
+      "variacion": 35.7
+    },
+    {
+      "area": "Desarrollo Humano",
+      "valores": [
+        2659,
+        3051,
+        3647
+      ],
+      "variacion": 37.2
+    },
+    {
+      "area": "Cultura",
+      "valores": [
+        1811,
+        2061,
+        2361
+      ],
+      "variacion": 30.4
+    },
+    {
+      "area": "Inclusión",
+      "valores": [
+        891,
+        1144,
+        1318
+      ],
+      "variacion": 47.9
+    },
+    {
+      "area": "Salud",
+      "valores": [
+        1548,
+        1426,
+        1252
+      ],
+      "variacion": -19.1
+    },
+    {
+      "area": "Apoyo Socioeconómico",
+      "valores": [
+        773,
+        867,
+        923
+      ],
+      "variacion": 19.4
+    },
+    {
+      "area": "Proyección Social",
+      "valores": [
+        659,
+        565,
+        508
+      ],
+      "variacion": -22.9
+    },
+    {
+      "area": "Laboratorio Creativo",
+      "valores": [
+        676,
+        601,
+        498
+      ],
+      "variacion": -26.3
+    },
+    {
+      "area": "Bienestar Digital",
+      "valores": [
+        499,
+        523,
+        0
+      ],
+      "variacion": -100.0
+    }
+  ],
+  "alertas": [
+    {
+      "nivel": "critico",
+      "titulo": "Bienestar Digital sin registros en 2026-1",
+      "detalle": "El área reportó 523 registros en 2025-2 y ninguno en 2026-1. Verificar si dejó de operar o si dejó de cargar la información."
+    },
+    {
+      "nivel": "advertencia",
+      "titulo": "9 cargues masivos detectados",
+      "detalle": "10,600 registros de beneficios (Auxilio de sostenimiento, Beneficio matrícula cero, Política de gratuidad) se cargaron en bloque en uno o dos días. Se excluyen de la participación orgánica."
+    },
+    {
+      "nivel": "info",
+      "titulo": "790 registros repetidos",
+      "detalle": "Mismo estudiante, misma fecha, área y actividad. Se conserva solo el primero."
+    }
+  ],
+  "cargues": [
+    {
+      "fecha": "2025-03-06",
+      "area": "Apoyo Socioeconómico",
+      "actividad": "Auxilio de sostenimiento",
+      "registros": 550
+    },
+    {
+      "fecha": "2025-03-06",
+      "area": "Apoyo Socioeconómico",
+      "actividad": "Política de gratuidad",
+      "registros": 660
+    },
+    {
+      "fecha": "2025-03-12",
+      "area": "Apoyo Socioeconómico",
+      "actividad": "Beneficio matrícula cero",
+      "registros": 990
+    },
+    {
+      "fecha": "2025-09-06",
+      "area": "Apoyo Socioeconómico",
+      "actividad": "Auxilio de sostenimiento",
+      "registros": 750
+    },
+    {
+      "fecha": "2025-09-07",
+      "area": "Apoyo Socioeconómico",
+      "actividad": "Política de gratuidad",
+      "registros": 900
+    },
+    {
+      "fecha": "2025-09-19",
+      "area": "Apoyo Socioeconómico",
+      "actividad": "Beneficio matrícula cero",
+      "registros": 1350
+    },
+    {
+      "fecha": "2026-03-07",
+      "area": "Apoyo Socioeconómico",
+      "actividad": "Política de gratuidad",
+      "registros": 1620
+    },
+    {
+      "fecha": "2026-03-10",
+      "area": "Apoyo Socioeconómico",
+      "actividad": "Beneficio matrícula cero",
+      "registros": 2430
+    },
+    {
+      "fecha": "2026-03-15",
+      "area": "Apoyo Socioeconómico",
+      "actividad": "Auxilio de sostenimiento",
+      "registros": 1350
+    }
+  ],
+  "perfil": {
+    "facultad": {
+      "etiquetas": [
+        "Ingeniería",
+        "Producción y Diseño",
+        "Ciencias Económicas",
+        "Ciencias Sociales"
+      ],
+      "valores": [
+        3693,
+        1824,
+        1703,
+        1296
+      ]
+    },
+    "jornada": {
+      "etiquetas": [
+        "Diurna",
+        "Nocturna"
+      ],
+      "valores": [
+        5318,
+        3198
+      ]
+    },
+    "municipio": {
+      "etiquetas": [
+        "Medellín",
+        "Bello",
+        "Itagüí",
+        "Envigado",
+        "Sabaneta",
+        "Copacabana",
+        "Otros"
+      ],
+      "valores": [
+        4451,
+        982,
+        714,
+        482,
+        362,
+        273,
+        1252
+      ]
+    }
+  },
+  "regla_cargue": {
+    "umbral_minimo": 200,
+    "factor": 10
+  }
+}

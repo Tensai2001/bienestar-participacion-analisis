@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Participación en Bienestar</title>
+<meta name="description" content="Informe de participación en servicios de Bienestar Universitario que separa la asistencia orgánica de los cargues administrativos. Datos sintéticos.">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f7ef;
+  --card: #ffffff;
+  --ink: #002a3f;
+  --ink-2: #44566a;
+  --ink-3: #6a7886;
+  --hair: rgba(0, 42, 63, .08);
+  --accent: #835ca3;
+  --accent-soft: rgba(131, 92, 163, .10);
+  --highlight: #f9ee92;
+  --s-org: #835ca3;
+  --s-adm: #c98a1e;
+  --seq-1: #cbbbe0;
+  --seq-2: #9c7cc2;
+  --seq-3: #5f3d84;
+  --div-pos: #3f6fc4;
+  --div-neg: #c2603a;
+  --grid: rgba(0, 42, 63, .07);
+  --st-crit: #b42318;
+  --st-warn: #a15c07;
+  --st-info: #3f6fc4;
+  --shadow: 0 1px 2px rgba(0, 42, 63, .04), 0 6px 20px rgba(0, 42, 63, .06);
+  --r: 16px;
+  --font: Calibri, Carlito, "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0d1a22; --card: #14242e; --ink: #eef1ec; --ink-2: #b9c4ca; --ink-3: #8c9aa3;
+    --hair: rgba(255, 255, 255, .08); --accent: #b29ae0; --accent-soft: rgba(178, 154, 224, .12);
+    --s-org: #9a7bc9; --s-adm: #b98327; --seq-1: #4b3a6b; --seq-2: #7a5fae; --seq-3: #b29ae0;
+    --div-pos: #6f8bd6; --div-neg: #cf6a44; --grid: rgba(255, 255, 255, .07);
+    --st-crit: #f2856f; --st-warn: #e0a43c; --st-info: #8ea6e8;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d1a22; --card: #14242e; --ink: #eef1ec; --ink-2: #b9c4ca; --ink-3: #8c9aa3;
+  --hair: rgba(255, 255, 255, .08); --accent: #b29ae0; --accent-soft: rgba(178, 154, 224, .12);
+  --s-org: #9a7bc9; --s-adm: #b98327; --seq-1: #4b3a6b; --seq-2: #7a5fae; --seq-3: #b29ae0;
+  --div-pos: #6f8bd6; --div-neg: #cf6a44; --grid: rgba(255, 255, 255, .07);
+  --st-crit: #f2856f; --st-warn: #e0a43c; --st-info: #8ea6e8;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font);
+  font-size: 16px; line-height: 1.55; min-height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px 64px; }
+.num { font-variant-numeric: tabular-nums; }
+
+header.hero { padding: 48px 0 32px; }
+.tag {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--accent);
+  background: var(--accent-soft); padding: 4px 12px; border-radius: 999px;
+}
+h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; letter-spacing: -.02em; margin: 16px 0 12px; max-width: 18ch; }
+.lead { font-size: 20px; color: var(--ink-2); max-width: 62ch; margin: 0; }
+.meta { font-size: 14px; color: var(--ink-3); margin-top: 16px; }
+
+.contrast {
+  display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 32px;
+}
+@media (min-width: 720px) { .contrast { grid-template-columns: 1fr 1fr; } }
+.big {
+  background: var(--card); border-radius: var(--r); padding: 24px; box-shadow: var(--shadow);
+}
+.big .label { font-size: 14px; color: var(--ink-2); font-weight: 700; }
+.big .value { font-size: clamp(48px, 9vw, 72px); font-weight: 700; line-height: 1; letter-spacing: -.03em; margin: 8px 0; }
+.big .note { font-size: 14px; color: var(--ink-3); margin: 0; }
+.big.real { background: var(--ink); color: var(--bg); }
+.big.real .label, .big.real .note { color: color-mix(in srgb, var(--bg) 78%, transparent); }
+.big.real .value { color: var(--highlight); }
+:root[data-theme="dark"] .big.real .value { color: var(--ink); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .big.real .value { color: var(--ink); } }
+:root[data-theme="dark"] .big.real .label, :root[data-theme="dark"] .big.real .note { color: var(--ink-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .big.real .label, :root:not([data-theme="light"]) .big.real .note { color: var(--ink-2); } }
+:root[data-theme="dark"] .big.real { background: var(--accent-soft); color: var(--ink); box-shadow: inset 0 0 0 1px var(--accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .big.real { background: var(--accent-soft); color: var(--ink); box-shadow: inset 0 0 0 1px var(--accent); } }
+
+.kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; }
+@media (min-width: 720px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
+.kpi { background: var(--card); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
+.kpi .k-label { font-size: 13px; color: var(--ink-2); line-height: 1.3; }
+.kpi .k-value { font-size: 28px; font-weight: 700; letter-spacing: -.01em; margin-top: 4px; }
+.kpi .k-delta { font-size: 13px; color: var(--ink-3); }
+
+section { margin-top: 56px; }
+.sec-head { display: flex; gap: 12px; align-items: baseline; }
+.sec-num { font-size: 14px; font-weight: 700; color: var(--accent); }
+h2 { font-size: 28px; line-height: 1.2; letter-spacing: -.01em; margin: 0; }
+.sec-intro { color: var(--ink-2); max-width: 70ch; margin: 8px 0 20px; }
+.card { background: var(--card); border-radius: var(--r); padding: 20px; box-shadow: var(--shadow); }
+.card + .card { margin-top: 16px; }
+.card h3 { font-size: 16px; margin: 0 0 4px; }
+.card .sub { font-size: 14px; color: var(--ink-3); margin: 0 0 16px; }
+.chart-box { position: relative; height: 320px; }
+.chart-box.tall { height: 380px; }
+.chart-box.short { height: 220px; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--ink-2); margin-bottom: 12px; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+.insight {
+  margin-top: 16px; padding: 12px 16px; border-radius: 12px; background: var(--accent-soft);
+  color: var(--ink); font-size: 15px;
+}
+.insight strong { color: var(--accent); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 860px) { .grid-2 { grid-template-columns: 1.4fr 1fr; } }
+.grid-3 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 860px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+.alerts { display: grid; gap: 12px; }
+.alert { display: grid; grid-template-columns: 32px 1fr; gap: 12px; background: var(--card); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
+.alert .ico { width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center; font-weight: 700; font-size: 16px; }
+.alert .lvl { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.alert h3 { font-size: 16px; margin: 2px 0 4px; }
+.alert p { margin: 0; font-size: 14px; color: var(--ink-2); }
+.alert.critico .ico { background: color-mix(in srgb, var(--st-crit) 14%, transparent); color: var(--st-crit); }
+.alert.critico .lvl { color: var(--st-crit); }
+.alert.advertencia .ico { background: color-mix(in srgb, var(--st-warn) 14%, transparent); color: var(--st-warn); }
+.alert.advertencia .lvl { color: var(--st-warn); }
+.alert.info .ico { background: color-mix(in srgb, var(--st-info) 14%, transparent); color: var(--st-info); }
+.alert.info .lvl { color: var(--st-info); }
+
+details { margin-top: 12px; }
+summary {
+  cursor: pointer; font-size: 14px; font-weight: 700; color: var(--accent); list-style: none;
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px;
+  touch-action: manipulation; -webkit-tap-highlight-color: transparent; user-select: none;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▸"; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1); }
+details[open] summary::before { transform: rotate(90deg); }
+.table-scroll { overflow-x: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--hair); white-space: nowrap; }
+th { font-weight: 700; color: var(--ink-2); font-size: 13px; }
+td.r, th.r { text-align: right; }
+.up { color: var(--div-pos); font-weight: 700; }
+.down { color: var(--div-neg); font-weight: 700; }
+
+.steps { counter-reset: s; display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; }
+.steps li::before {
+  content: counter(s); width: 32px; height: 32px; border-radius: 999px; background: var(--accent-soft);
+  color: var(--accent); font-weight: 700; display: grid; place-items: center;
+}
+.steps strong { display: block; }
+.steps span { color: var(--ink-2); font-size: 15px; }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .9em; background: var(--accent-soft); padding: 1px 6px; border-radius: 6px; }
+
+.concl { display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
+.concl li { background: var(--card); border-radius: 12px; padding: 16px 16px 16px 20px; box-shadow: var(--shadow); position: relative; }
+.concl li::before { content: ""; position: absolute; left: 0; top: 16px; bottom: 16px; width: 4px; border-radius: 0 4px 4px 0; background: var(--accent); }
+
+footer { margin-top: 64px; font-size: 13px; color: var(--ink-3); }
+
+.reveal { opacity: 0; transform: translateY(8px) scale(.98); transition: opacity 220ms cubic-bezier(0.23, 1, 0.32, 1), transform 220ms cubic-bezier(0.23, 1, 0.32, 1); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transform: none; transition: opacity 160ms linear; }
+  summary::before { transition: none; }
+}
+@media print { .reveal { opacity: 1; transform: none; } .big, .card, .kpi, .alert, .concl li { box-shadow: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <span class="tag">Caso de portafolio · datos sintéticos</span>
+  <h1>¿Cuánto creció realmente la participación en Bienestar?</h1>
+  <p class="lead">La base de asistencia muestra un crecimiento fuerte. Pero una parte importante de esos registros no son personas asistiendo a un servicio, sino beneficios cargados en bloque por el área administrativa.</p>
+  <p class="meta" id="meta"></p>
+
+  <div class="contrast">
+    <div class="big reveal">
+      <div class="label">Lo que dice la base completa</div>
+      <div class="value num" id="g-bruto"></div>
+      <p class="note" id="g-bruto-note"></p>
+    </div>
+    <div class="big real reveal">
+      <div class="label">Participación real (orgánica)</div>
+      <div class="value num" id="g-org"></div>
+      <p class="note" id="g-org-note"></p>
+    </div>
+  </div>
+  <div class="kpis" id="kpis"></div>
+</header>
+
+<section class="reveal">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Los picos que no son asistencia</h2></div>
+  <p class="sec-intro">Registros por mes, separando la participación orgánica de los cargues administrativos de beneficios. Los saltos de marzo y septiembre coinciden con la asignación de beneficios, no con más estudiantes en los servicios.</p>
+  <div class="card">
+    <div class="legend">
+      <span><i style="background:var(--s-org)"></i>Orgánico</span>
+      <span><i style="background:var(--s-adm)"></i>Cargue administrativo</span>
+    </div>
+    <div class="chart-box"><canvas id="c-mensual" aria-label="Registros por mes, orgánicos y administrativos" role="img"></canvas></div>
+    <div class="insight" id="insight-mensual"></div>
+    <details>
+      <summary>Ver tabla de datos</summary>
+      <div class="table-scroll"><table id="t-mensual"></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Comportamiento por área</h2></div>
+  <p class="sec-intro">Solo participación orgánica. Las áreas se ordenan por volumen del último periodo.</p>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Registros orgánicos por periodo</h3>
+      <div class="legend" id="leg-periodos"></div>
+      <div class="chart-box tall"><canvas id="c-areas" aria-label="Registros orgánicos por área y periodo" role="img"></canvas></div>
+    </div>
+    <div class="card">
+      <h3 id="var-title"></h3>
+      <p class="sub" id="var-sub">Variación porcentual de registros orgánicos.</p>
+      <div class="chart-box tall"><canvas id="c-var" aria-label="Variación porcentual por área" role="img"></canvas></div>
+    </div>
+  </div>
+  <div class="card">
+    <details>
+      <summary>Ver tabla por área</summary>
+      <div class="table-scroll"><table id="t-areas"></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Alertas de calidad de datos</h2></div>
+  <p class="sec-intro">Hallazgos que cambian la lectura de los números y que conviene resolver en la fuente.</p>
+  <div class="alerts" id="alertas"></div>
+  <div class="card" style="margin-top:16px">
+    <details>
+      <summary>Ver cargues masivos detectados</summary>
+      <div class="table-scroll"><table id="t-cargues"></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-head"><span class="sec-num">04</span><h2>¿Quiénes participan?</h2></div>
+  <p class="sec-intro" id="perfil-intro"></p>
+  <div class="grid-3">
+    <div class="card"><h3>Facultad</h3><div class="chart-box short"><canvas id="c-fac" role="img" aria-label="Usuarios por facultad"></canvas></div></div>
+    <div class="card"><h3>Jornada</h3><div class="chart-box short"><canvas id="c-jor" role="img" aria-label="Usuarios por jornada"></canvas></div></div>
+    <div class="card"><h3>Municipio de residencia</h3><div class="chart-box short"><canvas id="c-mun" role="img" aria-label="Usuarios por municipio"></canvas></div></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Cómo se construyó</h2></div>
+  <p class="sec-intro">El informe se genera automáticamente desde la base: al cambiar los datos, se vuelve a ejecutar un solo script.</p>
+  <div class="card">
+    <ol class="steps">
+      <li><div><strong>Validación de la base</strong><span>Se verifica que existan todas las columnas esperadas antes de calcular.</span></div></li>
+      <li><div><strong>Depuración de repetidos</strong><span>Registros con el mismo estudiante, fecha, área y actividad se cuentan una sola vez.</span></div></li>
+      <li><div><strong>Detección de cargues masivos</strong><span id="regla"></span></div></li>
+      <li><div><strong>Indicadores y alertas</strong><span>Se calculan con Python (pandas) y se guardan en <code>indicadores.json</code> para trazabilidad.</span></div></li>
+      <li><div><strong>Informe</strong><span>Los indicadores se insertan en una plantilla HTML con Chart.js, publicada con GitHub Pages.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Conclusiones</h2></div>
+  <ul class="concl" id="conclusiones"></ul>
+</section>
+
+<footer>
+  Datos 100 % sintéticos, generados para ilustrar el método. No corresponden a ninguna institución ni a personas reales.
+</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const D = /*__DATOS__*/null;
+
+const fmt = n => n.toLocaleString("es-CO");
+const pct = n => (n > 0 ? "+" : "") + n.toLocaleString("es-CO", { maximumFractionDigits: 1 }) + " %";
+const $ = id => document.getElementById(id);
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+const K0 = D.kpis[0], KN = D.kpis[D.kpis.length - 1], R = D.resumen;
+const P0 = D.periodo_inicial, PN = D.periodo_final;
+
+// ---------- Texto ----------
+$("meta").textContent = `Periodos ${D.periodos.join(", ")} · ${fmt(D.kpis.reduce((a, k) => a + k.total_bruto, 0))} registros analizados`;
+$("g-bruto").textContent = pct(R.crecimiento_bruto);
+$("g-bruto-note").textContent = `Registros totales, ${P0} → ${PN} (${fmt(K0.total_bruto)} → ${fmt(KN.total_bruto)}).`;
+$("g-org").textContent = pct(R.crecimiento_organico);
+$("g-org-note").textContent = `Sin cargues administrativos ni repetidos (${fmt(K0.organicos)} → ${fmt(KN.organicos)}).`;
+
+const kpis = [
+  ["Registros orgánicos " + PN, fmt(KN.organicos), pct(R.crecimiento_organico) + " vs " + P0],
+  ["Usuarios únicos " + PN, fmt(KN.usuarios_unicos), pct(R.crecimiento_usuarios) + " vs " + P0],
+  ["Visitas por usuario", KN.recurrencia.toLocaleString("es-CO"), K0.recurrencia.toLocaleString("es-CO") + " en " + P0],
+  ["Registros administrativos", R.porcentaje_admin_final.toLocaleString("es-CO") + " %", "del total en " + PN],
+];
+$("kpis").innerHTML = kpis.map(([l, v, d]) =>
+  `<div class="kpi reveal"><div class="k-label">${l}</div><div class="k-value num">${v}</div><div class="k-delta num">${d}</div></div>`).join("");
+
+const M = D.serie_mensual;
+const iMax = M.administrativo.indexOf(Math.max(...M.administrativo));
+const totMax = M.organico[iMax] + M.administrativo[iMax];
+$("insight-mensual").innerHTML = `En <strong>${M.etiquetas[iMax]}</strong> se registraron ${fmt(totMax)} atenciones, pero ${fmt(M.administrativo[iMax])} (${Math.round(M.administrativo[iMax] / totMax * 100)} %) fueron un cargue de beneficios. Leído sin depurar, ese mes parece el de mayor participación del periodo.`;
+
+$("t-mensual").innerHTML = `<thead><tr><th>Mes</th><th class="r">Orgánico</th><th class="r">Administrativo</th><th class="r">Total</th></tr></thead><tbody>` +
+  M.etiquetas.map((e, i) => `<tr><td>${e}</td><td class="r num">${fmt(M.organico[i])}</td><td class="r num">${fmt(M.administrativo[i])}</td><td class="r num">${fmt(M.organico[i] + M.administrativo[i])}</td></tr>`).join("") + "</tbody>";
+
+$("var-title").textContent = `Cambio ${P0} → ${PN}`;
+{ const sin = D.areas.filter(a => a.valores[a.valores.length - 1] === 0).map(a => a.area);
+  if (sin.length) $("var-sub").textContent = `Variación porcentual de registros orgánicos. Sin incluir ${sin.join(", ")} (sin datos en ${PN}, ver alertas).`; }
+$("t-areas").innerHTML = `<thead><tr><th>Área</th>${D.periodos.map(p => `<th class="r">${p}</th>`).join("")}<th class="r">Variación</th></tr></thead><tbody>` +
+  D.areas.map(a => `<tr><td>${a.area}</td>${a.valores.map(v => `<td class="r num">${fmt(v)}</td>`).join("")}<td class="r num ${a.variacion >= 0 ? "up" : "down"}">${a.variacion === null ? "–" : pct(a.variacion)}</td></tr>`).join("") + "</tbody>";
+
+const NIVEL = { critico: ["!", "Crítico"], advertencia: ["▲", "Advertencia"], info: ["i", "Información"] };
+$("alertas").innerHTML = D.alertas.map(a => `<div class="alert ${a.nivel}"><div class="ico" aria-hidden="true">${NIVEL[a.nivel][0]}</div><div><div class="lvl">${NIVEL[a.nivel][1]}</div><h3>${a.titulo}</h3><p>${a.detalle}</p></div></div>`).join("");
+$("t-cargues").innerHTML = `<thead><tr><th>Fecha</th><th>Área</th><th>Actividad</th><th class="r">Registros</th></tr></thead><tbody>` +
+  D.cargues.map(c => `<tr><td class="num">${c.fecha}</td><td>${c.area}</td><td>${c.actividad}</td><td class="r num">${fmt(c.registros)}</td></tr>`).join("") + "</tbody>";
+
+$("perfil-intro").textContent = `Usuarios únicos con participación orgánica en ${PN} (${fmt(KN.usuarios_unicos)} estudiantes).`;
+$("regla").textContent = `Un día con al menos ${D.regla_cargue.umbral_minimo} registros de una misma actividad y ${D.regla_cargue.factor} veces la mediana diaria del área se marca como cargue administrativo y se excluye de la participación.`;
+
+// Conclusiones calculadas desde los datos
+const sube = D.areas.filter(a => a.variacion > 0).sort((a, b) => b.variacion - a.variacion);
+const baja = D.areas.filter(a => a.variacion !== null && a.variacion < 0 && a.variacion > -100).sort((a, b) => a.variacion - b.variacion);
+const cero = D.areas.filter(a => a.valores[a.valores.length - 1] === 0);
+const lista = arr => arr.map(a => `${a.area} (${pct(a.variacion)})`).join(", ");
+const concl = [
+  `El crecimiento real de la participación es <strong>${pct(R.crecimiento_organico)}</strong>, no ${pct(R.crecimiento_bruto)}. Reportar la cifra bruta sobreestima el resultado porque los cargues de beneficios crecieron más rápido que la asistencia.`,
+  `Los usuarios únicos crecieron ${pct(R.crecimiento_usuarios)} y la recurrencia pasó de ${K0.recurrencia.toLocaleString("es-CO")} a ${KN.recurrencia.toLocaleString("es-CO")} visitas por estudiante: Bienestar llega a más personas y estas vuelven más.`,
+  sube.length ? `Áreas con mayor crecimiento: ${lista(sube.slice(0, 3))}.` : null,
+  baja.length ? `Áreas en descenso que requieren revisión: ${lista(baja)}.` : null,
+  cero.length ? `${cero.map(a => a.area).join(", ")} no reporta registros en ${PN}. Antes de concluir que el servicio se suspendió, hay que confirmar si es un problema de captura.` : null,
+  `Recomendación: registrar en la fuente un campo de <strong>origen del registro</strong> (asistencia o beneficio asignado) para no depender de reglas de detección.`,
+].filter(Boolean);
+$("conclusiones").innerHTML = concl.map(c => `<li>${c}</li>`).join("");
+
+// ---------- Gráficos ----------
+let charts = [];
+function buildCharts() {
+  if (!window.Chart) return;
+  charts.forEach(c => c.destroy()); charts = [];
+  const ink2 = css("--ink-2"), grid = css("--grid"), card = css("--card");
+  Chart.defaults.font.family = css("--font");
+  Chart.defaults.font.size = 13;
+  Chart.defaults.color = ink2;
+  const tooltip = { backgroundColor: css("--ink"), titleColor: css("--bg"), bodyColor: css("--bg"), padding: 10, cornerRadius: 8, displayColors: true, boxPadding: 4,
+    callbacks: { label: c => ` ${c.dataset.label ? c.dataset.label + ": " : ""}${fmt(c.parsed[c.chart.options.indexAxis === "y" ? "x" : "y"])}` } };
+  const axis = { grid: { color: grid, drawTicks: false }, border: { display: false }, ticks: { padding: 8 } };
+  const noGrid = { grid: { display: false }, border: { display: false }, ticks: { padding: 6 } };
+  const bar = { borderRadius: 4, borderSkipped: "start", borderWidth: 0 };
+
+  charts.push(new Chart($("c-mensual"), {
+    type: "bar",
+    data: { labels: M.etiquetas, datasets: [
+      { label: "Orgánico", data: M.organico, backgroundColor: css("--s-org"), ...bar, borderSkipped: "start", borderRadius: { topLeft: 0, topRight: 0, bottomLeft: 4, bottomRight: 4 }, borderColor: card, borderWidth: { top: 2 } },
+      { label: "Cargue administrativo", data: M.administrativo, backgroundColor: css("--s-adm"), borderRadius: { topLeft: 4, topRight: 4 }, borderSkipped: false },
+    ] },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      plugins: { legend: { display: false }, tooltip: { ...tooltip, callbacks: { ...tooltip.callbacks,
+        footer: items => "Total: " + fmt(items.reduce((a, i) => a + i.parsed.y, 0)) } } },
+      scales: { x: { ...noGrid, stacked: true }, y: { ...axis, stacked: true, ticks: { ...axis.ticks, callback: v => fmt(v) } } } }
+  }));
+
+  const seq = [css("--seq-1"), css("--seq-2"), css("--seq-3")];
+  $("leg-periodos").innerHTML = D.periodos.map((p, i) => `<span><i style="background:${seq[i]}"></i>${p}</span>`).join("");
+  charts.push(new Chart($("c-areas"), {
+    type: "bar",
+    data: { labels: D.areas.map(a => a.area), datasets: D.periodos.map((p, i) => ({
+      label: p, data: D.areas.map(a => a.valores[i]), backgroundColor: seq[i], ...bar, categoryPercentage: .78, barPercentage: .92 })) },
+    options: { indexAxis: "y", responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip },
+      scales: { y: noGrid, x: { ...axis, ticks: { ...axis.ticks, callback: v => fmt(v) } } } }
+  }));
+
+  const pos = css("--div-pos"), neg = css("--div-neg");
+  const vars = D.areas.filter(a => a.valores[a.valores.length - 1] > 0).sort((a, b) => b.variacion - a.variacion);
+  charts.push(new Chart($("c-var"), {
+    type: "bar",
+    data: { labels: vars.map(a => a.area), datasets: [{ data: vars.map(a => a.variacion), backgroundColor: vars.map(a => a.variacion >= 0 ? pos : neg), ...bar }] },
+    options: { indexAxis: "y", responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { ...tooltip, callbacks: { label: c => " " + pct(c.parsed.x) } } },
+      scales: { y: noGrid, x: { ...axis, ticks: { ...axis.ticks, callback: v => v + " %" } } } }
+  }));
+
+  const single = (id, d) => charts.push(new Chart($(id), {
+    type: "bar",
+    data: { labels: d.etiquetas, datasets: [{ label: "Usuarios", data: d.valores, backgroundColor: css("--s-org"), ...bar, maxBarThickness: 18 }] },
+    options: { indexAxis: "y", responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip },
+      scales: { y: noGrid, x: { ...axis, ticks: { ...axis.ticks, maxTicksLimit: 4, callback: v => fmt(v) } } } }
+  }));
+  single("c-fac", D.perfil.facultad);
+  single("c-jor", D.perfil.jornada);
+  single("c-mun", D.perfil.municipio);
+}
+buildCharts();
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", buildCharts);
+
+// Aparición suave al hacer scroll
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), { threshold: .08 }) : null;
+document.querySelectorAll(".reveal").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+</script>
+</body>
+</html>
